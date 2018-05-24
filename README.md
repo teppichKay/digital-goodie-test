@@ -1,33 +1,27 @@
-## Build and run
-Run the API server:
+##Digital Goodie programming assignment
+
+####Ke Wang
+
+### How to start
+
+In your terminal,
 
 ```
-java -jar user-db.jar
-```
-
-Run the commands below in the project root directory.
-
-```
-npm install
+cd digital-goodie-test
+npm install 
 npm start
 ```
+The app then can be viewed on localhost:3000.
 
-## Project design
+###Screenshot
+![screenshot](screenshot.png)
 
-Major components are:
+### App Design
 
-- **UserList** shows all the users and there information;
-- **PostUser** is a form for creating new user.
-- **UpdateUser** is a form for updating an existing user.
-- An extra Modal will pop up on the front page when one clicks the delete button of a user from the user list.
+This web page is built only upon React.js, SCSS and other necessary dependencies, without using libraries of the table, form etc. 
 
-State design for Redux:
+Thus, the styles might not be very nice, but functionalities (sort, delete, inline edit, form validation) that are required should be working.
 
-To smoothly handle operations on different pages, states are structured as five major parts: addUser, updateUser, fetchUser, fetchUsers, deleteUser. For each parts, the nested states include at least:
-
-- loading: to decide whether to progress bar or the real content.
-- updated/fetched/added/deleted: operation is done.
-- error: to handle potential error.
 
 
 

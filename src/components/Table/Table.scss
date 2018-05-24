@@ -1,0 +1,129 @@
+$form-bg: #13232f;
+$white: #ffffff;
+$main: #1ab188;
+$main-light: lighten($main,5%);
+$main-dark: darken($main,5%);
+$form-info-color: #eee;
+
+$gray-light: #a0b3b0;
+$gray: #ddd;
+
+$font-normal: 1.0rem;
+$font-small: 0.8rem;
+$br: 4px;
+$thin: 300;
+$normal: 400;
+$bold: 600;
+
+form {
+	font-size: $font-normal;
+  background:rgba($form-bg,.9);
+  padding: 20px;
+  max-width:500px;
+  height: 260px;
+  margin: auto;
+  border-radius:$br;
+  box-shadow:0 4px 10px 4px rgba($form-bg,.3);
+  color: $white;
+  .formContent {
+  	div {
+	  	height: 70px;
+	  	label {
+	  		width: 200px;
+	  		margin-bottom: 5px;
+	  		display: block;
+	  	}
+	  	span {
+	  		color: $form-info-color;
+	  		font-size: 13px;
+	  		margin-left:  20px;
+	  		color: $gray;
+	  	}
+	  }
+
+	  input, select {
+		  font-size: $font-small;
+		  width: 200px;
+		  height: 16px;
+		  padding:5px 10px;
+		  background:none;
+		  background-image:none;
+		  border:1px solid $gray-light;
+		  color:$white;
+		  border-radius:0;
+		  transition:border-color .25s ease, box-shadow .25s ease;
+		  &:focus {
+				outline:0;
+				border-color:$main;
+		  }
+		}
+
+		select {
+		  width: 220px;
+		  height: 26px;
+		}
+
+	  .submitBtnContainer {
+	  	margin: auto;
+	  	margin-top: 10px;
+	  	.submitBtn {
+	  		margin: auto;
+	  		text-align: center;
+	  		border:0;
+			  border-radius:4px;
+			  width: 120px;
+			  padding:5px 0;
+			  font-size:$font-small;
+			  font-weight:$bold;
+			  text-transform:uppercase;
+			  letter-spacing:.1em;
+			  background:$main;
+			  color:$white;
+			  transition:all.5s ease;
+			  -webkit-appearance: none;
+			  cursor: pointer;
+			  &:hover, &:focus {
+			    background:$main-dark;
+			  }
+	  	}
+
+	  	.submitError {
+		  	color: $gray;
+		  	margin: auto;
+		  	text-align: center;
+		  }
+	  }
+  }
+  
+}
+
+.tableContainer {
+	
+	margin-top: 30px;
+	overflow-y: auto;
+	height: 400px;
+	table {
+		text-align: center;
+		border-collapse: collapse;
+		margin: auto;
+		width: 80%;
+		thead {
+			background:rgba($main-light,.9);
+			color: $white;
+			&:hover, &:focus {
+			    background:$main-dark;
+			}
+		}
+		th, td {
+			font-size: $font-small;
+			border: 1px solid $gray-light;
+			padding: 4px;
+			i {
+				margin-left: 5px;
+			}
+		}
+	}
+}
+
+
+
