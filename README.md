@@ -1,6 +1,6 @@
-##Digital Goodie programming assignment
+## Digital Goodie programming assignment
 
-####Ke Wang
+#### Ke Wang
 
 ### How to start
 
@@ -13,7 +13,7 @@ npm start
 ```
 The app then can be viewed on localhost:3000.
 
-###Screenshot
+### Screenshot
 ![screenshot](screenshot.png)
 
 ### App Design
@@ -23,5 +23,6 @@ This web page is built only upon React.js, SCSS and other necessary dependencies
 Thus, the styles might not be very nice, but functionalities (sort, delete, inline edit, form validation) that are required should be working.
 
 
+### Others
 
-
+Code indentation was a little off here and there after pushing to the Github. 
