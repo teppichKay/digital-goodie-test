@@ -9,20 +9,21 @@ class Cells extends Component {
 		this.setState({ editing: true }, () => this.refs.input.focus())
 	}
 
-	onBlur =() => {
+	onBlur =(e) => {
+		e.preventDefault();
 		this.setState({ editing: false });
 	}
 	
 	render () {
 
 		const { value, onChange } = this.props;
-
+		
 		return this.state.editing ? 
 			<td>
 				<input ref='input' 
 					value={value}
 					onChange={e => onChange(e.target.value)}
-					onBlur={e => this.onBlur()} />
+					onBlur={e => this.onBlur(e)} />
 			</td> :
 			<td onClick={() => this.onFocus()}>
 				{value}

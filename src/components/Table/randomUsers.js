@@ -22,7 +22,7 @@ for (var i = 0; i < 30; i++) {
 	};
 
 	var userModel = {
-		id: i,
+		id: Math.random().toString(36).replace(/[^a-z]+/g, '').substr(2, 10),
 		name: names[i],
 		age: Math.floor(Math.random() * 120 + 10),
 		gender: genderTypes[Math.floor(2 * Math.random())],

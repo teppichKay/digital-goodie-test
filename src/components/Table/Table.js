@@ -65,15 +65,15 @@ class Table extends Component {
 		event.preventDefault();
 
 		this.setState({addErrorInfo: false});
-		var prevId = this.state.users.length;
-
+		
 		const validation = this.validator.validate(this.state.newUser);
 
 		if (validation.isValid) {
 			var newNameStr = this.state.newUser.name;
+			var newAge = parseInt(this.state.newUser.age, 10);
 			// trim name string
-			var newUserCopy = {...this.state.newUser, name: newNameStr.trim()};
-			newUserCopy.id = prevId + 1;
+			var newUserCopy = {...this.state.newUser, name: newNameStr.trim(), age: newAge};
+			newUserCopy.id = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(2, 10);
 			this.setState({
 				users: this.state.users.concat(newUserCopy)
 			})
@@ -91,7 +91,6 @@ class Table extends Component {
 	}
 
 	handleNewUserChange = label => event => {
-
 		switch (label) {
 			case 'name': 
 				this.setState({ newUser: {...this.state.newUser, name: event.target.value } });
@@ -106,10 +105,9 @@ class Table extends Component {
 				this.setState(this.state);
 		}
 	}
-
+	
 	renderCells = () => {
 		var users = [...this.state.users];
-
 		return users.map((user) => (
 			<tr key={user.id}>
 				{
@@ -119,7 +117,11 @@ class Table extends Component {
 							value={user[label]}
 							onChange={value => {
 								var copy = [...this.state.users];
-								copy[user.id][label] = value;
+								for (var i = 0; i < copy.length; i++) {
+									if (copy[i].id === user.id) {
+										copy[i][label] = value;
+									}
+								}
 								this.setState({ users: copy }) 
 							}} 
 						/>
